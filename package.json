@@ -1,0 +1,49 @@
+{
+    "name": "coldfusionsymbols",
+    "displayName": "Coldfusion Symbols",
+    "description": "Basic Coldfusion Symbols Search",
+    "icon": "icon.png",
+    "version": "0.0.2",
+    "publisher": "dalucema",
+    "author": "dalucema",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/dalucema/vsCodeCfSymbolExtension"
+    },
+    "engines": {
+        "vscode": "^1.24.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "symbols",
+        "coldfusion"
+    ],
+    "activationEvents": [
+        "onLanguage:cfml"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "languages": [{
+            "id": "cfml",
+            "extensions": [
+                ".cfc"
+            ]
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
