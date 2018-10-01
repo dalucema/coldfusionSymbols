@@ -8,7 +8,7 @@
     "author": "dalucema",
     "repository": {
         "type": "git",
-        "url": "https://gitlab.com/dalucema/vsCodeCfSymbolExtension"
+        "url": "https://github.com/dalucema/coldfusionSymbols"
     },
     "engines": {
         "vscode": "^1.24.0"
@@ -25,12 +25,14 @@
     ],
     "main": "./out/extension",
     "contributes": {
-        "languages": [{
-            "id": "cfml",
-            "extensions": [
-                ".cfc"
-            ]
-        }]
+        "languages": [
+            {
+                "id": "cfml",
+                "extensions": [
+                    ".cfc"
+                ]
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

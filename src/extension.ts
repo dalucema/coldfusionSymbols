@@ -17,6 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
 class CfmlDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
     public provideDocumentSymbols(document1: vscode.TextDocument, token: vscode.CancellationToken): Thenable<vscode.SymbolInformation[]> {
         return new Promise((resolve, reject) => {
+            
             var symbols = [];
             const patternFunctions = new RegExp(/(<cffunction)(\s*?name=)\"(.*?)\"/g);
             const patternFunctionsName = new RegExp(/\"(.*?)\"/);
@@ -33,6 +34,7 @@ class CfmlDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                     }
                 }
             }
+
             resolve(symbols);
         });
     }
